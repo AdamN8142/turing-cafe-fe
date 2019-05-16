@@ -11,7 +11,10 @@ class ResForm extends Component {
     }
   }
 
-    handleChange = () => {
+    handleChange = (event) => {
+      this.setState({
+        [event.target.name]: event.target.value
+      })
 
     }
 
@@ -31,10 +34,35 @@ class ResForm extends Component {
             name = 'name'
             value = {this.state.value}
             placeholder= 'Name'
+          >
+          </input>
+
+
+          <input
+            type = 'text'
+            onChange = {this.handleChange}
+            name = 'date'
+            value = {this.state.date}
+            placeholder= 'Date'
+          
           ></input>
-          <input></input>
-          <input></input>
-          <input></input>
+          <input
+             type = 'text'
+             onChange = {this.handleChange}
+             name = 'time'
+             value = {this.state.time}
+             placeholder= 'Time'
+          ></input>
+
+          <input
+            type= 'text'
+            onChange = {this.handleChange}
+            name= 'guests'
+            value = {this.state.numGuests}
+            placeholder ='Number of Guests'
+          
+          
+          ></input>
           <button>SUBMIT</button>
         </form>
       </div>
